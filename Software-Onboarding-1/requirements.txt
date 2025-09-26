@@ -1,0 +1,14 @@
+# Create and activate virtual environment first!
+# python -m venv .venv
+# 
+# Activate (Windows): .venv\Scripts\activate
+# Activate (Mac/Linux): source .venv/bin/activate
+#
+# Then install dependencies:
+# pip install -r requirements.txt
+
+ultralytics>=8.0.0
+torch>=2.0.0
+opencv-python
+
+

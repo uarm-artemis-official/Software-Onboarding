@@ -1,0 +1,13 @@
+# Dataset configuration for YOLO training
+
+# Dataset paths (relative to this file!!)
+train: ./_train/images
+val: ./_val/images
+test: ./_test/images
+
+# number of classes, here we are just detecting one class (the armor plate)
+nc: 1
+
+# class names 
+names: "armor_plate"
+
