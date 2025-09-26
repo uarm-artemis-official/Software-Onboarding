@@ -1,3 +1,5 @@
+# Software Onboarding
+
 Welcome to the software onboarding projects repository. This repository contains a series of increasingly complex onboarding projects designed to introduce new members to the fundamentals of autonomous aiming and autonomous navigation.
 
 These projects are meant to provide hands-on experience with the technologies we use most frequently in software development. The onboarding starts simple and progressively builds up, covering concepts from deep learning-based object detection, to traditional computer vision techniques, and eventually into navigation and ROS2.
@@ -40,27 +42,13 @@ Below is a list of current onboarding projects with a small overview and their s
 ### Software Onboarding 1 - Intro to Object-Detection: 
 - Learn the basics of deep learning-based object detection using YOLO.
 - Explore how a detection pipeline works: model input → bounding boxes → visualization.
-- [Dataset](https://github.com/HaoqinHong/GKD-RoboMaster-Five-Point-Dataset/tree/master): This a link to the dataset that will be needed train the YOLO model
-Main Takeaways:
+- You can download the dataset under the folder `Software-Onboarding-1` (the `_train`, `_val`, and `_test` folders)
 
-Understand how modern object detection works.
-
-Hands-on with YOLO (Python).
-
-First exposure to connecting vision to robotics applications.
 ### Software Onboarding 2 - Traditional CV C++: 
 - Learn the fundamentals of C++ programming while implementing traditional CV techniques.
 - Implement binary thresholding and contour detection using OpenCV in C++.
 - Compare this approach with what you learned from YOLO in Onboarding Project 1.
 
-
-Main Takeaways:
-
-Practical C++ coding experience.
-
-Introduction to image processing pipelines.
-
-Deeper understanding of how computer vision worked before deep learning.
 
 ### Software Onboarding 3 - Navigation & ROS2:
 - Introduction to ROS2 (Robot Operating System) and its role in robotics software.
@@ -68,7 +56,3 @@ Deeper understanding of how computer vision worked before deep learning.
     - Nodes, topics, and services in ROS2
     - Sensor fusion basics (e.g., lidar, IMU, odometry)
 
-Main Takeaways:
-Set up and run a ROS2 workspace.
-Understand the building blocks of robot navigation software.
-Exposure to how our navigation systems tie into aiming and contro
