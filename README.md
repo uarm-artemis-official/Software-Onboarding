@@ -1,6 +1,6 @@
 # Software Onboarding
 
-Welcome to the software onboarding projects repository. This repository contains a series of increasingly complex onboarding projects designed to introduce new members to the fundamentals of autonomous aiming and autonomous navigation.
+Welcome to the software onboarding projects repository. This repository contains a series of onboarding projects designed to introduce new members to the fundamentals of autonomous aiming and autonomous navigation.
 
 These projects are meant to provide hands-on experience with the technologies we use most frequently in software development. The onboarding starts simple and progressively builds up, covering concepts from deep learning-based object detection, to traditional computer vision techniques, and eventually into navigation and ROS2.
 
@@ -33,11 +33,8 @@ Traditional CV techniques:
 ## Projects
 Each project is meant to be a small coding project that requires learning and understanding few concepts in order to complete it. If you are lost, take the opportunity to explore and problem solve on your own, this process is where the best learning happens. Of course, you can always reach out to a software co-lead or lead if you need guidance.
 
-Demo projects are included in the repository for demostrating the intended end behavior. These are minimal prototypes just meant to showcase the end result. The demos should looked at after you have completed the project or when you are completely stuck after looking at the instructions, hints, and asking for help from an onboarding instructor.
 
-Each project will be accompanied by a write-up which describe the desired end result and provide some information which may be helpful for completing it. However, these write-ups are not comprehensive and will not contain everything necessary for completing the project, thus you'll have to do some digging around on the internet.
-
-Below is a list of current onboarding projects with a small overview and their status.
+Below is a list of current onboarding projects with a small overview.
 
 ### Software Onboarding 1 - Intro to Object-Detection: 
 - Learn the basics of deep learning-based object detection using YOLO.
