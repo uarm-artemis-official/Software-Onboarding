@@ -1,6 +1,6 @@
 # Software Onboarding Project #2: Lightbar Detection
 
-Welcome to your second software onboarding project! You'll build a **real-world computer vision system** to detect LED lightbars on RoboMaster robots using C++ and OpenCV.
+For the second software onboarding project, you'll build a **real-world computer vision system** based on C++ to detect LED lightbars on RoboMaster robots using C++ and OpenCV.
 
 ## What You'll Learn
 
@@ -11,7 +11,6 @@ Welcome to your second software onboarding project! You'll build a **real-world 
 - **Real-world CV challenges** - Lighting, noise, and parameter tuning
 
 ## Real-World Context
-
 In RoboMaster competitions, robots have **LED lightbars** that serve as:
 - **Targeting points** - Where you aim to score hits
 - **Team identification** - Blue vs red teams
@@ -25,18 +24,6 @@ Your detector needs to work reliably under various lighting conditions and angle
 - C++ compiler (GCC 7+ or Clang) with C++17 support
 - CMake 3.16+
 - OpenCV 4.0+
-
-**Install OpenCV:**
-```bash
-# macOS
-brew install opencv
-
-# Ubuntu/Linux  
-sudo apt install libopencv-dev
-
-# Windows - follow OpenCV installation guide
-```
-
 
 ## Project Structure
 
@@ -117,16 +104,17 @@ make
 - Bounding box drawing with `rectangle()`
 
 **3. Choose your target color:**
+- Look at the image you are testing on to see if you need to use the blue or red detection
 - **Blue detection** - Uncommented by default, easier to start with
 - **Red detection** - Comment out blue section, uncomment red section
 
-**4. Test with robot images:**
+**4. Test with robot images:**s
 ```bash
 # Default test image
 ./bin/lightbar_detector
 
 # Your own image
-./bin/lightbar_detector ../resources/robot_image.jpg
+./bin/lightbar_detector ../resources/[image]
 ```
 
 ## What You'll See
@@ -140,11 +128,6 @@ make
 
 **Console Output:** Detection statistics and area calculations
 
-## Troubleshooting
-
-**No detections?** Widen HSV ranges, especially Value (brightness)
-**Too many false positives?** Tighten color ranges or increase area threshold  
-**Broken detections?** Increase morphological closing kernel size
 
 ## Real-World Impact
 
@@ -160,5 +143,5 @@ This lightbar detection is used for:
 - [OpenCV Documentation](https://docs.opencv.org/4.x/index.html)
 - [HSV Color Space](https://en.wikipedia.org/wiki/HSL_and_HSV)
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/)
-
-Master this project to build a foundation for advanced computer vision and robotics applications! 🤖
+- [Quick C++ Video](https://www.youtube.com/watch?v=MNeX4EGtR5Y)
+- [References & Pointers](https://www.youtube.com/watch?v=sxHng1iufQE)
