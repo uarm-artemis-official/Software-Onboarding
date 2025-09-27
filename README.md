@@ -1,4 +1,24 @@
-# Software Onboarding
+# Softw## Prerequisites
+
+We assume you have at least some prior programming experience (loops, functions, branching). You don't need to know C++ deeply before starting, but you'll pick up the important parts as you go. We'll use C++ in later projects since it's the main language for robotics software.
+
+### Version Control Setup
+
+I highly recommend using GitHub Desktop
+- Download and install [GitHub Desktop](https://desktop.github.com/)
+- Sign in with your GitHub account
+- Clone this repository: `https://github.com/uarm-artemis-official/Software-Onboarding`
+- GitHub Desktop provides a visual interface for:
+  - Viewing file changes and diffs
+  - Making commits with descriptive messages
+  - Pushing/pulling changes to/from GitHub
+  - Managing branches and pull requests
+
+**Why GitHub Desktop?**
+- **Visual interface** - See your changes clearly with color-coded diffs
+- **Beginner-friendly** - No need to memorize git commands
+- **Integrated workflows** - Easy branch management and pull requests
+- **Conflict resolution** - Visual merge conflict resolution tools Onboarding
 
 Welcome to the software onboarding projects repository. This repository contains a series of onboarding projects designed to introduce new members to the fundamentals of autonomous aiming and autonomous navigation.
 
