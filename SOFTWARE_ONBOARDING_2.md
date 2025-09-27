@@ -18,12 +18,215 @@ In RoboMaster competitions, robots have **LED lightbars** that serve as:
 
 Your detector needs to work reliably under various lighting conditions and angles.
 
-## Prerequisites
+## Prerequisites & Installation
 
 **Required Software:**
 - C++ compiler (GCC 7+ or Clang) with C++17 support
 - CMake 3.16+
 - OpenCV 4.0+
+
+### Platform-Specific Installation
+
+#### 🍎 **macOS Installation**
+
+**Install Xcode Command Line Tools (C++ compiler):**
+```bash
+# Install Xcode command line tools (includes clang++)
+xcode-select --install
+
+# Verify installation
+clang++ --version
+# Should show: Apple clang version 12.0+ with C++17 support
+```
+
+**Install Package Manager (Homebrew):**
+```bash
+# Install Homebrew if you don't have it
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+**Install CMake and OpenCV:**
+```bash
+# Install CMake
+brew install cmake
+
+# Install OpenCV
+brew install opencv
+
+# Verify installations
+cmake --version    # Should show 3.16+
+pkg-config --modversion opencv4    # Should show OpenCV version
+```
+
+#### 🐧 **Linux (Ubuntu/Debian) Installation**
+
+**Install C++ Compiler:**
+```bash
+# Update package list
+sudo apt update
+
+# Install GCC compiler and build essentials
+sudo apt install build-essential g++
+
+# Verify installation
+g++ --version
+# Should show: g++ (GCC) 7.0+ with C++17 support
+```
+
+**Install CMake:**
+```bash
+# Install CMake
+sudo apt install cmake
+
+# Verify installation
+cmake --version    # Should show 3.16+
+```
+
+**Install OpenCV:**
+```bash
+# Install OpenCV development packages
+sudo apt install libopencv-dev
+
+# For newer versions, you might need:
+sudo apt install libopencv-contrib-dev
+
+# Verify installation
+pkg-config --modversion opencv4
+```
+
+#### 🪟 **Windows Installation**
+
+**Option 1: Visual Studio (Recommended)**
+```powershell
+# Download and install Visual Studio Community 2019/2022 (free)
+# Make sure to include "Desktop development with C++" workload
+# This includes MSVC compiler with C++17 support
+
+# Verify from Developer Command Prompt:
+cl
+# Should show: Microsoft C/C++ Optimizing Compiler
+```
+
+**Option 2: MinGW-w64 with MSYS2**
+
+[Video Installing MinGW](https://www.youtube.com/watch?v=oC69vlWofJQ&embeds_referring_euri=https%3A%2F%2Fcode.visualstudio.com%2F)
+```bash
+# Download and install MSYS2 from https://www.msys2.org/
+# Then in MSYS2 terminal:
+
+# Update package database
+pacman -Syu
+
+# Install MinGW-w64 toolchain
+pacman -S mingw-w64-x86_64-gcc
+
+# Add to PATH: C:\msys64\mingw64\bin
+```
+
+**Install CMake:**
+```powershell
+# Option 1: Download from https://cmake.org/download/
+# Choose "Windows x64 Installer"
+
+# Option 2: Using Chocolatey
+choco install cmake
+
+# Verify installation (restart terminal first)
+cmake --version
+```
+
+**Install OpenCV:**
+```powershell
+# Option 1: Pre-built binaries (easier)
+# Download from https://opencv.org/releases/
+# Extract and add bin/ folder to PATH
+
+# Option 2: Using vcpkg (recommended for Visual Studio)
+git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg integrate install
+.\vcpkg install opencv4
+```
+
+### 🔧 **Installation Verification**
+
+**Test your complete setup:**
+```bash
+# Check C++ compiler with C++17 support
+echo '#include <iostream>
+#include <string_view>  // C++17 feature
+int main() { 
+    std::string_view sv = "C++17 works!"; 
+    std::cout << sv << std::endl; 
+    return 0; 
+}' > test.cpp
+
+# Compile and run
+g++ -std=c++17 test.cpp -o test    # Linux/macOS
+# OR for Windows MSVC:
+cl /std:c++17 test.cpp
+
+./test    # Should print "C++17 works!"
+```
+
+**Test OpenCV installation:**
+```bash
+# Test OpenCV detection
+echo '#include <opencv2/opencv.hpp>
+int main() { 
+    std::cout << "OpenCV version: " << CV_VERSION << std::endl; 
+    return 0; 
+}' > opencv_test.cpp
+
+# Compile with OpenCV
+g++ -std=c++17 opencv_test.cpp -o opencv_test `pkg-config --cflags --libs opencv4`
+
+./opencv_test    # Should print OpenCV version
+```
+
+### 🛠️ **Common Installation Issues**
+
+**macOS:**
+- If Homebrew OpenCV doesn't work: `brew uninstall opencv && brew install opencv`
+- For M1 Macs, make sure you're using native ARM versions
+
+**Linux:**
+- If `pkg-config` can't find OpenCV: `export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH`
+- Missing dev packages: `sudo apt install pkg-config`
+
+**Windows:**
+- PATH issues: Make sure CMake, compiler, and OpenCV bin folders are in system PATH
+- Visual Studio: Use "x64 Native Tools Command Prompt" for compilation
+- DLL issues: Copy OpenCV DLLs to your executable directory
+
+### 📝 **VS Code Extensions (Recommended)**
+
+If you're using VS Code for development, install these essential extensions:
+
+**Required Extensions:**
+```bash
+# Install via VS Code Extensions panel or command line:
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.cmake-tools
+code --install-extension twxs.cmake
+```
+
+**Extension Details:**
+- **C/C++** (`ms-vscode.cpptools`) - IntelliSense, debugging, code browsing
+- **CMake Tools** (`ms-vscode.cmake-tools`) - CMake integration and building  
+- **CMake** (`twxs.cmake`) - CMake language support and syntax highlighting
+
+**Optional but Helpful:**
+- **C++ Intellisense** - Better code completion
+- **Error Lens** - Inline error display
+- **GitLens** - Enhanced Git integration
+
+**VS Code Setup Tips:**
+- Open the project folder in VS Code: `code Software-Onboarding-2/`
+- Use `Ctrl+Shift+P` → "CMake: Configure" to set up the project
+- Use `Ctrl+Shift+P` → "CMake: Build" to compile your code
+- IntelliSense will help with OpenCV function completion
 
 ## Project Structure
 
