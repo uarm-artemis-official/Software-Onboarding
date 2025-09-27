@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     if (argc > 1) {
         imagePath = argv[1];
     } else {
-        imagePath = "../resources/test_image.jpg";
+        imagePath = "../resources/[image].jpg"; // put image name here to test the algorithm
     }
 
     // TODO: Load the image using cv::imread()
