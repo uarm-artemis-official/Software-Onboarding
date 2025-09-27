@@ -141,7 +141,7 @@ This lightbar detection is used for:
 ## Learning Resources
 
 - [OpenCV Documentation](https://docs.opencv.org/4.x/index.html)
-- [HSV Color Space](https://en.wikipedia.org/wiki/HSL_and_HSV)
+- [HSV Color Space](https://opencv.org/blog/color-spaces-in-opencv/)
 - [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/)
 - [Quick C++ Video](https://www.youtube.com/watch?v=MNeX4EGtR5Y)
 - [References & Pointers](https://www.youtube.com/watch?v=sxHng1iufQE)
