@@ -3,7 +3,7 @@
 
 int main() {
     std::cout << "=== C++ Installation Test ===" << std::endl;
-    std::cout << "Hello World! 🎉" << std::endl;
+    std::cout << "Hello World!" << std::endl;
     std::cout << "C++ compiler is working correctly!" << std::endl;
     std::cout << std::endl;
     

@@ -114,12 +114,12 @@ pacman -S mingw-w64-x86_64-gcc
 ```
 
 **Install CMake:**
+[Installing CMake on Windows](https://www.youtube.com/watch?v=8_X5Iq9niDE)
 ```powershell
-# Option 1: Download from https://cmake.org/download/
+# Download from https://cmake.org/download/
 # Choose "Windows x64 Installer"
 
-# Option 2: Using Chocolatey
-choco install cmake
+
 
 # Verify installation (restart terminal first)
 cmake --version
@@ -207,59 +207,47 @@ Software-Onboarding-2/
 
 **Before starting the main project, test your C++ installation:**
 
-### 🍎 **macOS Users:**
+### **macOS Users:**
 ```bash
 # Navigate to the source directory
 cd Software-Onboarding-2/src
 
-# Compile with OpenCV (using pkg-config to find OpenCV)
-clang++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
+# Compile the test file (using clang++ from Xcode tools)
+clang++ -std=c++17 test_setup.cpp -o test_setup
 # OR using g++ if you installed it via Homebrew
-g++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
+g++ -std=c++17 test_setup.cpp -o test_setup
 
 # Run the test
 ./test_setup
-# Expected output: 
-# === C++ Installation Test ===
-# Hello World! 🎉  
-# C++ compiler is working correctly!
-#
-# === OpenCV Installation Test ===
-# OpenCV version: 4.x.x
-# OpenCV Mat creation: SUCCESS
-# Image size: 100x100
-# OpenCV is working correctly! ✅
-#
-# === All Tests Complete ===
-# You're ready to start the lightbar detection project! 🚀
+# Expected output: "Hello World!"
 ```
 
-### 🐧 **Linux Users:**
+### **Linux Users:**
 ```bash
 # Navigate to the source directory  
 cd Software-Onboarding-2/src
 
-# Compile with OpenCV
-g++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
+# Compile the test file
+g++ -std=c++17 test_setup.cpp -o test_setup
 
 # Run the test
 ./test_setup
-# Expected output: Same as above
+# Expected output: "Hello World!"
 ```
 
-### 🪟 **Windows Users:**
+### **Windows Users:**
 
 **Using MinGW/MSYS2:**
 ```bash
 # Navigate to the source directory
 cd Software-Onboarding-2/src
 
-# Compile with OpenCV (assuming OpenCV is installed via MSYS2)
-g++ -std=c++17 test_setup.cpp -o test_setup.exe `pkg-config --cflags --libs opencv4`
+# Compile the test file
+g++ -std=c++17 test_setup.cpp -o test_setup.exe
 
 # Run the test
 ./test_setup.exe
-# Expected output: Same as above
+# Expected output: "Hello World!"
 ```
 
 **Using Visual Studio:**
@@ -267,12 +255,12 @@ g++ -std=c++17 test_setup.cpp -o test_setup.exe `pkg-config --cflags --libs open
 # From Developer Command Prompt, navigate to source directory
 cd Software-Onboarding-2\src
 
-# Compile with OpenCV (assuming OpenCV is in your include/lib paths)
-cl /std:c++17 test_setup.cpp /I"C:\opencv\build\include" /link /LIBPATH:"C:\opencv\build\x64\vc15\lib" opencv_world4xx.lib
+# Compile the test file
+cl /std:c++17 test_setup.cpp
 
 # Run the test
 test_setup.exe
-# Expected output: Same as above
+# Expected output: "Hello World!"
 ```
 
 ## Computer Vision Pipeline
