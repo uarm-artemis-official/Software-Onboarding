@@ -149,51 +149,14 @@ cd vcpkg
 cd Software-Onboarding-2/src
 
 # Compile the test file
-g++ -std=c++17 test_setup.cpp -o test_setup    # Linux/macOS
-# OR for Windows MSVC:
-cl /std:c++17 test_setup.cpp
+g++ -std=c++17 test_setup.cpp -o test_setup   
 
 # Run the test
 ./test_setup    # Should print "Hello World! C++ compiler is working correctly!"
 ```
 
-**Manual Setup Test (Alternative):**
-```bash
-# Check C++ compiler with C++17 support
-echo '#include <iostream>
-#include <string_view>  // C++17 feature
-int main() { 
-    std::string_view sv = "C++17 works!"; 
-    std::cout << sv << std::endl; 
-    return 0; 
-}' > test.cpp
 
-# Compile and run
-g++ -std=c++17 test.cpp -o test    # Linux/macOS
-# OR for Windows MSVC:
-cl /std:c++17 test.cpp
-
-./test    # Should print "C++17 works!"
-```
-
-**Test OpenCV installation:**
-```bash
-# Test OpenCV detection
-echo '#include <opencv2/opencv.hpp>
-int main() { 
-    std::cout << "OpenCV version: " << CV_VERSION << std::endl; 
-    return 0; 
-}' > opencv_test.cpp
-
-# Compile with OpenCV
-g++ -std=c++17 opencv_test.cpp -o opencv_test `pkg-config --cflags --libs opencv4`
-
-./opencv_test    # Should print OpenCV version
-```
-
-
-
-### 📝 **VS Code Extensions (Recommended)**
+### **VS Code Extensions (Recommended)**
 
 If you're using VS Code for development, install these essential extensions:
 
@@ -249,14 +212,26 @@ Software-Onboarding-2/
 # Navigate to the source directory
 cd Software-Onboarding-2/src
 
-# Compile the test file (using clang++ from Xcode tools)
-clang++ -std=c++17 test_setup.cpp -o test_setup
+# Compile with OpenCV (using pkg-config to find OpenCV)
+clang++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
 # OR using g++ if you installed it via Homebrew
-g++ -std=c++17 test_setup.cpp -o test_setup
+g++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
 
 # Run the test
 ./test_setup
-# Expected output: "Hello World!"
+# Expected output: 
+# === C++ Installation Test ===
+# Hello World! 🎉  
+# C++ compiler is working correctly!
+#
+# === OpenCV Installation Test ===
+# OpenCV version: 4.x.x
+# OpenCV Mat creation: SUCCESS
+# Image size: 100x100
+# OpenCV is working correctly! ✅
+#
+# === All Tests Complete ===
+# You're ready to start the lightbar detection project! 🚀
 ```
 
 ### 🐧 **Linux Users:**
@@ -264,12 +239,12 @@ g++ -std=c++17 test_setup.cpp -o test_setup
 # Navigate to the source directory  
 cd Software-Onboarding-2/src
 
-# Compile the test file
-g++ -std=c++17 test_setup.cpp -o test_setup
+# Compile with OpenCV
+g++ -std=c++17 test_setup.cpp -o test_setup `pkg-config --cflags --libs opencv4`
 
 # Run the test
 ./test_setup
-# Expected output: "Hello World!"
+# Expected output: Same as above
 ```
 
 ### 🪟 **Windows Users:**
@@ -279,12 +254,12 @@ g++ -std=c++17 test_setup.cpp -o test_setup
 # Navigate to the source directory
 cd Software-Onboarding-2/src
 
-# Compile the test file
-g++ -std=c++17 test_setup.cpp -o test_setup.exe
+# Compile with OpenCV (assuming OpenCV is installed via MSYS2)
+g++ -std=c++17 test_setup.cpp -o test_setup.exe `pkg-config --cflags --libs opencv4`
 
 # Run the test
 ./test_setup.exe
-# Expected output: "Hello World!"
+# Expected output: Same as above
 ```
 
 **Using Visual Studio:**
@@ -292,12 +267,12 @@ g++ -std=c++17 test_setup.cpp -o test_setup.exe
 # From Developer Command Prompt, navigate to source directory
 cd Software-Onboarding-2\src
 
-# Compile the test file
-cl /std:c++17 test_setup.cpp
+# Compile with OpenCV (assuming OpenCV is in your include/lib paths)
+cl /std:c++17 test_setup.cpp /I"C:\opencv\build\include" /link /LIBPATH:"C:\opencv\build\x64\vc15\lib" opencv_world4xx.lib
 
 # Run the test
 test_setup.exe
-# Expected output: "Hello World!"
+# Expected output: Same as above
 ```
 
 ## Computer Vision Pipeline
