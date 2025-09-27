@@ -1,4 +1,4 @@
-# Softw## Prerequisites
+# Software Prerequisites
 
 We assume you have at least some prior programming experience (loops, functions, branching). You don't need to know C++ deeply before starting, but you'll pick up the important parts as you go. We'll use C++ in later projects since it's the main language for robotics software.
 
