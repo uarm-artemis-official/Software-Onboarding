@@ -27,7 +27,7 @@ Your detector needs to work reliably under various lighting conditions and angle
 
 ### Platform-Specific Installation
 
-#### 🍎 **macOS Installation**
+#### **macOS Installation**
 
 **Install Xcode Command Line Tools (C++ compiler):**
 ```bash
@@ -45,6 +45,7 @@ clang++ --version
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+[OpenCV C++ & CMake Installation Docs](https://docs.opencv.org/3.4/d0/db2/tutorial_macos_install.html)
 **Install CMake and OpenCV:**
 ```bash
 # Install CMake
@@ -136,6 +137,8 @@ cmake --version
 ```
 
 **Install OpenCV:**
+[OpenCV CPP Docs for Installation](https://docs.opencv.org/4.x/d3/d52/tutorial_windows_install.html)
+
 ```powershell
 # Option 1: Pre-built binaries (easier)
 # Download from https://opencv.org/releases/
@@ -149,9 +152,23 @@ cd vcpkg
 .\vcpkg install opencv4
 ```
 
-### 🔧 **Installation Verification**
+### **Installation Verification**
 
-**Test your complete setup:**
+**Quick C++ Test (Recommended):**
+```bash
+# Navigate to the project directory
+cd Software-Onboarding-2/src
+
+# Compile the test file
+g++ -std=c++17 test_setup.cpp -o test_setup    # Linux/macOS
+# OR for Windows MSVC:
+cl /std:c++17 test_setup.cpp
+
+# Run the test
+./test_setup    # Should print "Hello World! C++ compiler is working correctly!"
+```
+
+**Manual Setup Test (Alternative):**
 ```bash
 # Check C++ compiler with C++17 support
 echo '#include <iostream>
@@ -185,20 +202,7 @@ g++ -std=c++17 opencv_test.cpp -o opencv_test `pkg-config --cflags --libs opencv
 ./opencv_test    # Should print OpenCV version
 ```
 
-### 🛠️ **Common Installation Issues**
 
-**macOS:**
-- If Homebrew OpenCV doesn't work: `brew uninstall opencv && brew install opencv`
-- For M1 Macs, make sure you're using native ARM versions
-
-**Linux:**
-- If `pkg-config` can't find OpenCV: `export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH`
-- Missing dev packages: `sudo apt install pkg-config`
-
-**Windows:**
-- PATH issues: Make sure CMake, compiler, and OpenCV bin folders are in system PATH
-- Visual Studio: Use "x64 Native Tools Command Prompt" for compilation
-- DLL issues: Copy OpenCV DLLs to your executable directory
 
 ### 📝 **VS Code Extensions (Recommended)**
 
@@ -234,7 +238,8 @@ code --install-extension twxs.cmake
 Software-Onboarding-2/
 ├── CMakeLists.txt              # Build configuration
 ├── src/
-│   └── main.cpp               # Single file with TODOs to complete
+│   ├── main.cpp               # Single file with TODOs to complete
+│   └── test_setup.cpp         # Simple test to verify C++ installation
 ├── resources/                 # Place test robot images here
 ├── build/                     # Generated files (gitignored)
 └── SOLUTIONS.txt              # For instructors only
@@ -245,6 +250,66 @@ Software-Onboarding-2/
 - **Fill-in-the-blanks** - You complete TODO sections to learn
 - **Easy color switching** - Comment/uncomment sections to test blue vs red
 - **Real robot testing** - Use actual competition images
+
+## Quick Setup Test
+
+**Before starting the main project, test your C++ installation:**
+
+### 🍎 **macOS Users:**
+```bash
+# Navigate to the source directory
+cd Software-Onboarding-2/src
+
+# Compile the test file (using clang++ from Xcode tools)
+clang++ -std=c++17 test_setup.cpp -o test_setup
+# OR using g++ if you installed it via Homebrew
+g++ -std=c++17 test_setup.cpp -o test_setup
+
+# Run the test
+./test_setup
+# Expected output: "Hello World!"
+```
+
+### 🐧 **Linux Users:**
+```bash
+# Navigate to the source directory  
+cd Software-Onboarding-2/src
+
+# Compile the test file
+g++ -std=c++17 test_setup.cpp -o test_setup
+
+# Run the test
+./test_setup
+# Expected output: "Hello World!"
+```
+
+### 🪟 **Windows Users:**
+
+**Using MinGW/MSYS2:**
+```bash
+# Navigate to the source directory
+cd Software-Onboarding-2/src
+
+# Compile the test file
+g++ -std=c++17 test_setup.cpp -o test_setup.exe
+
+# Run the test
+./test_setup.exe
+# Expected output: "Hello World!"
+```
+
+**Using Visual Studio:**
+```cmd
+# From Developer Command Prompt, navigate to source directory
+cd Software-Onboarding-2\src
+
+# Compile the test file
+cl /std:c++17 test_setup.cpp
+
+# Run the test
+test_setup.exe
+# Expected output: "Hello World!"
+```
 
 ## Computer Vision Pipeline
 
