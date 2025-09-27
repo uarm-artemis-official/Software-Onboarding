@@ -59,7 +59,7 @@ cmake --version    # Should show 3.16+
 pkg-config --modversion opencv4    # Should show OpenCV version
 ```
 
-#### 🐧 **Linux (Ubuntu/Debian) Installation**
+#### **Linux (Ubuntu/Debian) Installation**
 
 **Install C++ Compiler:**
 ```bash
@@ -95,20 +95,9 @@ sudo apt install libopencv-contrib-dev
 pkg-config --modversion opencv4
 ```
 
-#### 🪟 **Windows Installation**
+#### **Windows Installation**
 
-**Option 1: Visual Studio (Recommended)**
-```powershell
-# Download and install Visual Studio Community 2019/2022 (free)
-# Make sure to include "Desktop development with C++" workload
-# This includes MSVC compiler with C++17 support
-
-# Verify from Developer Command Prompt:
-cl
-# Should show: Microsoft C/C++ Optimizing Compiler
-```
-
-**Option 2: MinGW-w64 with MSYS2**
+**Option 1: MinGW-w64 with MSYS2**
 
 [Video Installing MinGW](https://www.youtube.com/watch?v=oC69vlWofJQ&embeds_referring_euri=https%3A%2F%2Fcode.visualstudio.com%2F)
 ```bash
