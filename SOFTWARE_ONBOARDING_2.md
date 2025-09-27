@@ -126,19 +126,15 @@ cmake --version
 ```
 
 **Install OpenCV:**
+
+[OpenCV C++ Installation Video](https://www.youtube.com/watch?v=aMXQshF7zdo)
+
 [OpenCV CPP Docs for Installation](https://docs.opencv.org/4.x/d3/d52/tutorial_windows_install.html)
 
 ```powershell
-# Option 1: Pre-built binaries (easier)
+# Pre-built binaries
 # Download from https://opencv.org/releases/
 # Extract and add bin/ folder to PATH
-
-# Option 2: Using vcpkg (recommended for Visual Studio)
-git clone https://github.com/Microsoft/vcpkg.git
-cd vcpkg
-.\bootstrap-vcpkg.bat
-.\vcpkg integrate install
-.\vcpkg install opencv4
 ```
 
 ### **Installation Verification**
