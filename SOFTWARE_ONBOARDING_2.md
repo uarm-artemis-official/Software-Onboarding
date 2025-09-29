@@ -20,12 +20,28 @@ Your detector needs to work reliably under various lighting conditions and angle
 
 ## Prerequisites & Installation
 
-**Required Software:**
-- C++ compiler (GCC 7+ or Clang) with C++17 support
-- CMake 3.16+
-- OpenCV 4.0+
+### **Windows Installation**
 
-### Platform-Specific Installation
+Make sure on VSCode you install these extensions:
+**C/C++ for Visual Studio Code**
+**CMake**
+**CMake Tools**
+
+(You can watch this video as a guide)[https://www.youtube.com/watch?v=m9HBM1m_EMU]
+
+
+
+Just install the most recent versions:
+
+[CMake Download](https://cmake.org/download/)
+- Make sure you are downloading Windows x64 Installer under Binary Distributions
+
+[OpenCV Download](https://opencv.org/releases/)
+- Download "Windows"
+
+
+Make sure the CMake path, and the two OpenCV paths are part of the environment variables 
+
 
 #### **macOS Installation**
 
@@ -46,6 +62,7 @@ clang++ --version
 ```
 
 [OpenCV C++ & CMake Installation Docs](https://docs.opencv.org/3.4/d0/db2/tutorial_macos_install.html)
+
 **Install CMake and OpenCV:**
 ```bash
 # Install CMake
@@ -95,86 +112,6 @@ sudo apt install libopencv-contrib-dev
 pkg-config --modversion opencv4
 ```
 
-#### **Windows Installation**
-
-**Option 1: MinGW-w64 with MSYS2**
-
-[Video Installing MinGW](https://www.youtube.com/watch?v=oC69vlWofJQ&embeds_referring_euri=https%3A%2F%2Fcode.visualstudio.com%2F)
-```bash
-# Download and install MSYS2 from https://www.msys2.org/
-# Then in MSYS2 terminal:
-
-# Update package database
-pacman -Syu
-
-# Install MinGW-w64 toolchain
-pacman -S mingw-w64-x86_64-gcc
-
-# Add to PATH: C:\msys64\mingw64\bin
-```
-
-**Install CMake:**
-[Installing CMake on Windows](https://www.youtube.com/watch?v=8_X5Iq9niDE)
-```powershell
-# Download from https://cmake.org/download/
-# Choose "Windows x64 Installer"
-
-
-
-# Verify installation (restart terminal first)
-cmake --version
-```
-
-**Install OpenCV:**
-
-[OpenCV C++ Installation Video](https://www.youtube.com/watch?v=aMXQshF7zdo)
-
-[OpenCV CPP Docs for Installation](https://docs.opencv.org/4.x/d3/d52/tutorial_windows_install.html)
-
-```powershell
-# Pre-built binaries
-# Download from https://opencv.org/releases/
-# Extract and add bin/ folder to PATH
-```
-
-### **Installation Verification**
-
-**Quick C++ Test (Recommended):**
-```bash
-# Navigate to the project directory
-cd Software-Onboarding-2/src
-
-# Compile the test file
-g++ -std=c++17 test_setup.cpp -o test_setup   
-
-# Run the test
-./test_setup    # Should print "Hello World! C++ compiler is working correctly!"
-```
-
-
-### **VS Code Extensions (Recommended)**
-
-If you're using VS Code for development, install these essential extensions:
-
-**Required Extensions:**
-```bash
-# Install via VS Code Extensions panel or command line:
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.cmake-tools
-code --install-extension twxs.cmake
-```
-
-**Extension Details:**
-- **C/C++** (`ms-vscode.cpptools`) - IntelliSense, debugging, code browsing
-- **CMake Tools** (`ms-vscode.cmake-tools`) - CMake integration and building  
-- **CMake** (`twxs.cmake`) - CMake language support and syntax highlighting
-
-**Optional but Helpful:**
-- **C++ Intellisense** - Better code completion
-- **Error Lens** - Inline error display
-- **GitLens** - Enhanced Git integration
-
-**VS Code Setup Tips:**
 - Open the project folder in VS Code: `code Software-Onboarding-2/`
 - Use `Ctrl+Shift+P` → "CMake: Configure" to set up the project
 - Use `Ctrl+Shift+P` → "CMake: Build" to compile your code
